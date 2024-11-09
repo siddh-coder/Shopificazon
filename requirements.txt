@@ -9,4 +9,4 @@ MarkupSafe==3.0.2
 packaging==24.2
 Werkzeug==3.1.2
 openai==1.9.0
-ntscraper
+ntscraper==0.3.17
