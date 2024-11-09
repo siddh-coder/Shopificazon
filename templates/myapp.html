@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My App</title>
+</head>
+<body>
+
+<h1>Translate Text</h1>
+<form method="POST" action="/translate">
+    <input type="text" name="user_input" placeholder="Enter text to translate">
+    <button type="submit">Translate</button>
+</form>
+
+{% if translated_text %}
+    <p>Translated Text: {{ translated_text }}</p>
+{% endif %}
+
+<h1>Describe Image</h1>
+<form method="POST" action="/describe_image">
+    <input type="text" name="image_url" placeholder="Enter image URL">
+    <button type="submit">Describe</button>
+</form>
+
+{% if image_description %}
+    <p>Image Description: {{ image_description }}</p>
+{% endif %}
+
+<h1>Scrape Tweets</h1>
+<form method="POST" action="/scrape_tweets">
+    <input type="text" name="username" placeholder="Enter Twitter username">
+    <button type="submit">Scrape Tweets</button>
+</form>
+
+{% if tweets %}
+    <h2>Recent Tweets from {{ username }}:</h2>
+    <ul>
+        {% for tweet in tweets %}
+            <li>{{ tweet }}</li>
+        {% endfor %}
+    </ul>
+{% endif %}
+
+</body>
+</html>
